@@ -1,0 +1,29 @@
+{
+    "name": "alex-yashin/pina-simple-controls",
+    "keywords": ["php"],
+    "license": "MIT",
+    "homepage": "https://github.com/alex-yashin/pina-simple-controls/",
+    "support": {
+        "issues": "https://github.com/alex-yashin/pina-simple-controls/issues",
+        "source": "https://github.com/alex-yashin/pina-simple-controls/"
+    },
+    "authors": [
+        {
+            "name": "Alex Yashin",
+            "email": "alex-yashin@ya.ru"
+        }
+    ],
+    "require": {
+        "php": ">=7.2",
+        "pinahq/framework": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "PinaSimpleControls\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
