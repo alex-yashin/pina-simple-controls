@@ -5,6 +5,7 @@ namespace PinaSimpleControls\Controls;
 
 
 use Pina\App;
+use Pina\Controls\BodyLessCard;
 use Pina\Controls\FilterForm;
 use Pina\Html;
 
@@ -12,26 +13,38 @@ use function Pina\__;
 
 class PreviewedPopupFilterForm extends FilterForm
 {
+
+    protected $title = '';
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->title = __('Поиск');
+        $this->addClass('popup popup-dialog popup-wide');
+    }
+
     protected function draw()
     {
         if ($this->record->getSchema()->isEmpty()) {
             return '';
         }
 
+        return $this->drawFilterPreview() . parent::draw();
+    }
+
+    protected function drawFilterPreview()
+    {
         $r = $this->drawFilled();
-
-        $search = __('Поиск');
-
-        $cl = uniqid('cl');
-
-        $preview = Html::nest(
-            'ul.nav filters/li/a[data-toggle-modal=.'.$cl.'][href=#]/i.fa fa-search+span',
-            ' ' . $search . ($r ? ' "' . $r .'"': '')
+        return Html::nest(
+            'ul.nav filters/li/a[data-toggle-modal=.' . $this->formClass . '][href=#]/i.fa fa-search+span',
+            ' ' . $this->title . ($r ? ' "' . $r . '"' : '')
         );
+    }
 
-        $formHeader = Html::nest('header/button.close[type=button][data-close-modal]+h3', $search);
-
-        return $preview . Html::nest('.popup popup-dialog popup-wide ' . $cl, $formHeader . parent::draw());
+    protected function drawHeader()
+    {
+        return Html::nest('header/button.close[type=button][data-close-modal]+h3', $this->title) . parent::drawHeader();
     }
 
     protected function drawFilled()
@@ -52,5 +65,10 @@ class PreviewedPopupFilterForm extends FilterForm
         }
 
         return implode(', ', $r);
+    }
+
+    protected function makeCard()
+    {
+        return App::make(BodyLessCard::class);
     }
 }
