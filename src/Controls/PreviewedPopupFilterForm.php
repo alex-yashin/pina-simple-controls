@@ -53,7 +53,7 @@ class PreviewedPopupFilterForm extends FilterForm
 
         $r = [];
         foreach ($this->record->getSchema() as $field) {
-            $value = $data[$field->getKey()] ?? null;
+            $value = $data[$field->getName()] ?? null;
 
             if (empty($value)) {
                 continue;
