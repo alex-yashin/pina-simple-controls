@@ -22,7 +22,7 @@ class FormSelect extends \Pina\Controls\FormSelect
             $id = uniqid('sel');
             $options['id'] = $id;
             App::assets()->addScript("https://unpkg.com/slim-select@latest/dist/slimselect.min.js");
-            App::assets()->addCss("https://unpkg.com/slim-select@latest/dist/slimselect.css");
+            App::assets()->addStyle("https://unpkg.com/slim-select@latest/dist/slimselect.css");
             $init = "new SlimSelect({select: '#$id',settings:{closeOnSelect: false,allowDeselect: true},})";
             App::assets()->addScriptContent("<script>$init</script>");
         }
