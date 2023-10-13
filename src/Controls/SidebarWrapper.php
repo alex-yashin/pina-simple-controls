@@ -21,7 +21,11 @@ class SidebarWrapper extends \Pina\Controls\SidebarWrapper
         if (empty($this->sidebar)) {
             return '';
         }
-        return Html::nest('aside', $this->sidebar->drawWithWrappers());
+        $r = '';
+        foreach ($this->sidebar as $control) {
+            $r .= Html::li($control->drawWithWrappers());
+        }
+        return Html::nest('aside/ul.nav bar', $r);
     }
 
 }

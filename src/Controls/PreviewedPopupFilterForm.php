@@ -37,7 +37,7 @@ class PreviewedPopupFilterForm extends FilterForm
     {
         $r = $this->drawFilled();
         return Html::nest(
-            'ul.nav filters/li/a[data-toggle-modal=.' . $this->formClass . '][href=#]/i.fa fa-search+span',
+            'a.btn btn-primary[data-toggle-modal=.' . $this->formClass . '][href=#]/i.fa fa-search+span',
             ' ' . $this->title . ($r ? ' "' . $r . '"' : '')
         );
     }
