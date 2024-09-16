@@ -10,7 +10,6 @@ use Pina\Controls\FormInput;
 use Pina\Controls\FormRow;
 use Pina\Controls\FormSelect;
 use Pina\Controls\FormStatic;
-use Pina\Controls\Nav;
 use Pina\Controls\PagingControl;
 use Pina\Controls\SidebarWrapper;
 use Pina\ModuleInterface;
@@ -20,7 +19,6 @@ class Module implements ModuleInterface
 
     public function __construct()
     {
-        App::container()->set(Nav::class, Controls\Nav::class);
         App::container()->set(FormRow::class, Controls\FormRow::class);
         App::container()->set(FormInput::class, Controls\FormInput::class);
         App::container()->set(FormStatic::class, Controls\FormStatic::class);
