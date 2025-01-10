@@ -3,8 +3,10 @@
 namespace PinaSimpleControls\Controls;
 
 use Pina\App;
+use Pina\Controls\BodyLessRecordFormCompiler;
+use Pina\Controls\RecordFormCompiler;
+use Pina\Data\DataRecord;
 use Pina\Html;
-use Pina\Controls\BodyLessCard;
 use Pina\Controls\RecordForm;
 
 class PopupRecordForm extends RecordForm
@@ -28,9 +30,13 @@ class PopupRecordForm extends RecordForm
             . parent::drawHeader();
     }
 
-    protected function makeCard()
+    protected function makeRecordFormCompiled(DataRecord $record): RecordFormCompiler
     {
-        return App::make(BodyLessCard::class);
+        /** @var BodyLessRecordFormCompiler $compiler */
+        $compiler = App::make(BodyLessRecordFormCompiler::class);
+        $compiler->load($record, $this);
+
+        return $compiler;
     }
 
 }
