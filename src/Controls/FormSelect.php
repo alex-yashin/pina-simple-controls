@@ -7,24 +7,18 @@ use Pina\App;
 class FormSelect extends \Pina\Controls\FormSelect
 {
 
-    protected function drawInput()
-    {
-        return parent::drawInput();
-    }
-
     protected function makeInputOptions()
     {
         $options = parent::makeInputOptions();
-        if ($this->required) {
-            $options['required'] = true;
-        }
         if ($this->multiple) {
             $id = uniqid('sel');
             $options['id'] = $id;
-            App::assets()->addScript("https://unpkg.com/slim-select@latest/dist/slimselect.min.js");
-            App::assets()->addStyle("https://unpkg.com/slim-select@latest/dist/slimselect.css");
+            App::assets()->addScript("/vendor/slimselect/slimselect.min.js");
+            App::assets()->addStyle("/vendor/slimselect/slimselect.css");
             $init = "new SlimSelect({select: '#$id',settings:{closeOnSelect: false,allowDeselect: true},})";
             App::assets()->addScriptContent("<script>$init</script>");
+        } elseif ($this->required) {
+            $options['required'] = true;
         }
         return $options;
     }
