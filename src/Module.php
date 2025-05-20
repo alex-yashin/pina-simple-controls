@@ -16,6 +16,8 @@ use Pina\Controls\RecordForm;
 use Pina\Controls\RecordView;
 use Pina\Controls\SidebarWrapper;
 use Pina\Controls\TableView;
+use Pina\Layouts\DefaultLayout;
+use Pina\Menu\MainMenu;
 use Pina\ModuleInterface;
 
 class Module implements ModuleInterface
@@ -27,6 +29,9 @@ class Module implements ModuleInterface
         App::container()->share(TableView::class, Controls\ContextTableView::class);
         App::container()->share(RecordView::class, Controls\ContextRecordViewWithSidebar::class);
         App::container()->share(RecordForm::class, Controls\RecordFormWithSidebar::class);
+
+        App::container()->share(MainMenu::class, Menu\MainMenu::class);
+        App::container()->share(DefaultLayout::class, Layouts\MainLayout::class);
 
         App::container()->set(FormRow::class, Controls\FormRow::class);
         App::container()->set(FormInput::class, Controls\FormInput::class);
