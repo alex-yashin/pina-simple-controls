@@ -22,12 +22,12 @@ class FeedRecordRow extends LinkedListItem
         $data = $this->record->getTextData();
 
         $titleField = $this->resolveTitleField($this->record->getSchema());
-        $title = $data[$titleField];
+        $title = $data[$titleField] ?? '';
         unset($data[$titleField]);
 
         $textField = $this->resolveDescriptionField($this->record->getSchema());
 
-        $text = trim(mb_substr(strip_tags($data[$textField]), 0, 500));
+        $text = trim(mb_substr(strip_tags($data[$textField] ?? ''), 0, 500));
         unset($data[$textField]);
 
         $enabled = $this->record->getValue('enabled') ?? 'Y';
