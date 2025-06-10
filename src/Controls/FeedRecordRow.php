@@ -55,7 +55,7 @@ class FeedRecordRow extends LinkedListItem
         return $icon . implode('', array_filter($content));
     }
 
-    protected function processTags(&$data)
+    protected function processTags($data)
     {
         return $data;
     }
