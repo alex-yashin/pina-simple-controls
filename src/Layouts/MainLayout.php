@@ -56,11 +56,11 @@ class MainLayout extends DefaultLayout
     {
         App::assets()->addStyle('/vendor/simple-css-styles/vendor/normalize.css');
 
-        App::assets()->addScript('/vendor/simple-css-styles/src/form/form.js');
         App::assets()->addScript('/vendor/simple-css-styles/src/pn.js');
         App::assets()->addScript('/vendor/simple-css-styles/src/zz.js');
         App::assets()->addScript('/vendor/simple-css-styles/src/ajax.js');
 
+        App::assets()->addScript('/vendor/simple-css-styles/src/form/form.js');
         App::assets()->addScript('/vendor/simple-css-styles/src/overlay/overlay.js');
         App::assets()->addScript('/vendor/simple-css-styles/src/form/textarea.js');
     }
