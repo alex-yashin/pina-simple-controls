@@ -19,6 +19,7 @@ use Pina\Controls\TableView;
 use Pina\Layouts\DefaultLayout;
 use Pina\Menu\MainMenu;
 use Pina\ModuleInterface;
+use Pina\Menu\RouterSiblingMenu;
 
 class Module implements ModuleInterface
 {
@@ -31,6 +32,7 @@ class Module implements ModuleInterface
         App::container()->share(RecordForm::class, Controls\RecordFormWithSidebar::class);
 
         App::container()->share(MainMenu::class, Menu\MainMenu::class);
+        App::container()->share(RouterSiblingMenu::class, Menu\RouterSiblingMenu::class);
         App::container()->share(DefaultLayout::class, Layouts\MainLayout::class);
 
         App::container()->set(FormRow::class, Controls\FormRow::class);
