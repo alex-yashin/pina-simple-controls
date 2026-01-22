@@ -28,7 +28,7 @@ class TransformationRecordForm extends RecordForm
      * @return Control|FormControl
      * @throws \Exception
      */
-    public function makeInput(Field $field, DataRecord $record)
+    public function makeInput(Field $field)
     {
         if ($field->getName() == $this->statusFieldName) {
             App::assets()->addScript('button-variant-selector.js');
@@ -51,7 +51,7 @@ class TransformationRecordForm extends RecordForm
             $this->buttonRow = new Wrapper('');
             return $row;
         }
-        return parent::makeInput($field, $record);
+        return parent::makeInput($field);
     }
 
 }

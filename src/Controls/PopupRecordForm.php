@@ -34,7 +34,7 @@ class PopupRecordForm extends RecordForm
     {
         /** @var BodyLessRecordFormCompiler $compiler */
         $compiler = App::make(BodyLessRecordFormCompiler::class);
-        $compiler->load($record, $this);
+        $compiler->load($record->getSchema(), $this);
 
         return $compiler;
     }
