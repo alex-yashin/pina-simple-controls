@@ -55,6 +55,10 @@ class PreviewedPopupFilterForm extends FilterForm
 
         $r = [];
         foreach ($this->record->getSchema() as $field) {
+            if ($field->isHidden()) {
+                continue;
+            }
+
             $value = $data[$field->getName()] ?? null;
 
             if (empty($value)) {
