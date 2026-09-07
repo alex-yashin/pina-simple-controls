@@ -10,7 +10,6 @@ use Pina\Controls\HiddenInput;
 use Pina\Controls\RecordForm;
 use Pina\Controls\SubmitButton;
 use Pina\Controls\Wrapper;
-use Pina\Data\DataRecord;
 use Pina\Data\Field;
 
 class TransformationRecordForm extends RecordForm

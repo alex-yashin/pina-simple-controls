@@ -26,14 +26,15 @@ class Module implements ModuleInterface
 
     public function __construct()
     {
-        App::container()->share(FormFlagStatic::class, Controls\FormFlagStatic::class);
-        App::container()->share(TableView::class, Controls\ContextTableView::class);
-        App::container()->share(RecordView::class, Controls\ContextRecordViewWithSidebar::class);
-        App::container()->share(RecordForm::class, Controls\RecordFormWithSidebar::class);
+        App::singletons()->set(MainMenu::class, Menu\MainMenu::class);
+        App::singletons()->set(RouterSiblingMenu::class, Menu\RouterSiblingMenu::class);
 
-        App::container()->share(MainMenu::class, Menu\MainMenu::class);
-        App::container()->share(RouterSiblingMenu::class, Menu\RouterSiblingMenu::class);
-        App::container()->share(DefaultLayout::class, Layouts\MainLayout::class);
+        App::container()->set(DefaultLayout::class, Layouts\MainLayout::class);
+
+        App::container()->set(FormFlagStatic::class, Controls\FormFlagStatic::class);
+        App::container()->set(TableView::class, Controls\ContextTableView::class);
+        App::container()->set(RecordView::class, Controls\ContextRecordViewWithSidebar::class);
+        App::container()->set(RecordForm::class, Controls\RecordFormWithSidebar::class);
 
         App::container()->set(FormRow::class, Controls\FormRow::class);
         App::container()->set(FormInput::class, Controls\FormInput::class);
