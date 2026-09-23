@@ -3,12 +3,12 @@
 namespace PinaSimpleControls\Controls;
 
 use Pina\App;
-use Pina\Controls\Button;
+use Pina\Controls\Components\Button;
 use Pina\Controls\Control;
-use Pina\Controls\FormControl;
-use Pina\Controls\HiddenInput;
-use Pina\Controls\RecordForm;
-use Pina\Controls\SubmitButton;
+use Pina\Controls\Form\FormControl;
+use Pina\Controls\Form\HiddenInput;
+use Pina\Controls\Form\SubmitButton;
+use Pina\Controls\Record\RecordForm;
 use Pina\Controls\Wrapper;
 use Pina\Data\Field;
 

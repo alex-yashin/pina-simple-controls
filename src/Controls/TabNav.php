@@ -9,9 +9,9 @@ use Pina\Html;
 
 class TabNav extends Nav
 {
-    protected function draw()
+    protected function draw(): string
     {
-        $inner = $this->drawInnerBefore() . $this->drawInner() . $this->drawInnerAfter();
+        $inner = $this->drawContent();
         if (empty($inner)) {
             return '';
         }
@@ -28,7 +28,10 @@ class TabNav extends Nav
     {
         /** @var TabNavItem $item */
         $item = App::make(TabNavItem::class);
-        $item->load($title, $link, $newPage);
+        $item->load($title, $link);
+        if ($newPage) {
+            $item->setNewPage();
+        }
         return $item;
     }
 }

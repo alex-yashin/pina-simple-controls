@@ -3,13 +3,13 @@
 namespace PinaSimpleControls\Controls;
 
 use Pina\App;
-use Pina\Controls\Card;
+use Pina\Controls\Components\Card;
 use Pina\Html;
 
 class ContextRecordViewWithSidebar extends ContextRecordView
 {
 
-    protected function drawInner()
+    protected function drawContent(): string
     {
         $sidebar = App::make(Card::class);
 
@@ -25,7 +25,7 @@ class ContextRecordViewWithSidebar extends ContextRecordView
             }
         }
 
-        $content = parent::drawInner();
+        $content = parent::drawContent();
 
         if (!$found) {
             return $content;

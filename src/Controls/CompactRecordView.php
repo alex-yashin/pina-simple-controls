@@ -3,7 +3,7 @@
 namespace PinaSimpleControls\Controls;
 
 use Pina\App;
-use Pina\Controls\RecordView;
+use Pina\Controls\Record\RecordView;
 use Pina\Data\DataRecord;
 
 class CompactRecordView extends RecordView

@@ -6,7 +6,7 @@ namespace PinaSimpleControls\Controls;
 
 use Pina\Html;
 
-class FormStatic extends \Pina\Controls\FormStatic
+class FormStatic extends \Pina\Controls\Form\FormStatic
 {
 
     protected function makeAttributes($attributes = [])

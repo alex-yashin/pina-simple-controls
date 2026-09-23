@@ -2,11 +2,11 @@
 
 namespace PinaSimpleControls\Controls;
 
-use Pina\Controls\FormStatic;
+use Pina\Controls\Form\FormStatic;
 
 class UntitledFormStatic extends FormStatic
 {
-    protected function drawInner()
+    protected function drawContent(): string
     {
         return $this->drawControl();
     }

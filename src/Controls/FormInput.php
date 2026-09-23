@@ -6,7 +6,7 @@ namespace PinaSimpleControls\Controls;
 
 use Pina\Html;
 
-class FormInput extends \Pina\Controls\FormInput
+class FormInput extends \Pina\Controls\Form\FormInput
 {
 
     protected function drawControl()

@@ -5,7 +5,7 @@ namespace PinaSimpleControls\Controls;
 
 
 use Pina\App;
-use Pina\Controls\TableView;
+use Pina\Controls\Record\TableView;
 use Pina\Controls\Wrapper;
 use Pina\Data\DataRecord;
 use Pina\Data\Schema;
@@ -13,7 +13,7 @@ use Pina\Data\Schema;
 class FeedTableView extends TableView
 {
 
-    protected function drawInner()
+    protected function drawContent(): string
     {
         $container = new Wrapper('ul.nav feed ');
 
@@ -22,7 +22,7 @@ class FeedTableView extends TableView
             $id = $this->resolveId($record);
             $container->append($this->makeFeedRecordRow($record, $id));
         }
-        return $container;
+        return strval($container);
     }
 
     protected function makeFeedRecordRow(DataRecord $record, $id): FeedRecordRow

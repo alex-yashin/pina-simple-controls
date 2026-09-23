@@ -3,14 +3,14 @@
 namespace PinaSimpleControls\Controls;
 
 use Pina\App;
-use Pina\Controls\Card;
-use Pina\Controls\RecordForm;
+use Pina\Controls\Components\Card;
+use Pina\Controls\Record\RecordForm;
 use Pina\Html;
 
 class RecordFormWithSidebar extends RecordForm
 {
 
-    protected function drawInner()
+    protected function drawContent(): string
     {
 
         $sidebar = App::make(Card::class);
@@ -27,7 +27,7 @@ class RecordFormWithSidebar extends RecordForm
             }
         }
 
-        $content = parent::drawInner();
+        $content = parent::drawContent();
 
         if (!$found) {
             return $content;

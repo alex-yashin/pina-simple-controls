@@ -3,8 +3,8 @@
 
 namespace PinaSimpleControls\Controls;
 
-use Pina\Controls\LinkedListView;
 use Pina\Controls\RawHtml;
+use Pina\Controls\Record\LinkedListView;
 
 class Breadcrumb extends LinkedListView
 {

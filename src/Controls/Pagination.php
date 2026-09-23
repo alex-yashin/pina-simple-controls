@@ -4,7 +4,7 @@
 namespace PinaSimpleControls\Controls;
 
 
-use Pina\Controls\PagingControl;
+use Pina\Controls\Components\PagingControl;
 
 class Pagination extends PagingControl
 {

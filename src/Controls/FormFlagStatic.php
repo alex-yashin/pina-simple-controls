@@ -5,7 +5,7 @@ namespace PinaSimpleControls\Controls;
 
 use Pina\Html;
 
-class FormFlagStatic extends \Pina\Controls\FormFlagStatic
+class FormFlagStatic extends \Pina\Controls\Form\FormFlagStatic
 {
     protected function drawInput()
     {

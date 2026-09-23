@@ -4,15 +4,15 @@
 namespace PinaSimpleControls\Controls;
 
 
-use Pina\Controls\Card;
+use Pina\Controls\Components\Card;
 use Pina\Html;
 
 class FormRow extends Card
 {
 
-    protected function draw()
+    protected function draw(): string
     {
-        return Html::nest('.row form-group', $this->drawInnerBefore() . $this->drawInner() . $this->drawInnerAfter());
+        return Html::nest('.row form-group', $this->drawContent());
     }
 
 }

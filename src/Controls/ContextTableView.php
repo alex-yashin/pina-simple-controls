@@ -5,12 +5,12 @@ namespace PinaSimpleControls\Controls;
 
 
 use Pina\App;
-use Pina\Controls\RecordRow;
-use Pina\Controls\Table;
+use Pina\Controls\Components\Table;
+use Pina\Controls\Record\RecordRow;
 use Pina\Controls\Wrapper;
 use Pina\Data\DataRecord;
 
-class ContextTableView extends \Pina\Controls\TableView
+class ContextTableView extends \Pina\Controls\Record\TableView
 {
     public function load($dataTable)
     {

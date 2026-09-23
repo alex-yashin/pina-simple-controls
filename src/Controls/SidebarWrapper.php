@@ -9,9 +9,9 @@ use Pina\Html;
 class SidebarWrapper extends \Pina\Controls\SidebarWrapper
 {
 
-    protected function draw()
+    protected function draw(): string
     {
-        $left = $this->drawInnerBefore() . $this->drawInner() . $this->drawInnerAfter();
+        $left = $this->drawContent();
         $sidebar = $this->drawSidebar();
         return Html::nest('.container section', $sidebar .  $left, $this->makeAttributes());
     }

@@ -5,10 +5,9 @@ namespace PinaSimpleControls\Controls;
 
 
 use Pina\App;
-use Pina\Controls\BodyLessRecordFormCompiler;
-use Pina\Controls\FilterForm;
-use Pina\Controls\RecordFormCompiler;
-use Pina\Data\DataRecord;
+use Pina\Controls\Form\FilterForm;
+use Pina\Controls\Record\BodyLessRecordFormCompiler;
+use Pina\Controls\Record\RecordFormCompiler;
 use Pina\Html;
 
 use function Pina\__;
@@ -26,7 +25,7 @@ class PreviewedPopupFilterForm extends FilterForm
         $this->addClass('popup popup-dialog popup-wide');
     }
 
-    protected function draw()
+    protected function draw(): string
     {
         if ($this->record->getSchema()->isEmpty()) {
             return '';
@@ -73,11 +72,11 @@ class PreviewedPopupFilterForm extends FilterForm
         return implode(', ', $r);
     }
 
-    protected function makeRecordFormCompiled(DataRecord $record): RecordFormCompiler
+    protected function makeRecordFormCompiled(): RecordFormCompiler
     {
         /** @var BodyLessRecordFormCompiler $compiler */
         $compiler = App::make(BodyLessRecordFormCompiler::class);
-        $compiler->load($record->getSchema(), $this);
+        $compiler->load($this, $this);
 
         return $compiler;
     }

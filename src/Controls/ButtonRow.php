@@ -4,13 +4,12 @@ namespace PinaSimpleControls\Controls;
 
 use Pina\Html;
 
-class ButtonRow extends \Pina\Controls\ButtonRow
+class ButtonRow extends \Pina\Controls\Components\ButtonRow
 {
 
-    protected function draw()
+    protected function draw(): string
     {
-        $inner = $this->drawInnerBefore() . $this->drawInner(). $this->drawInnerAfter();
-        return Html::nest('.buttons', $this->drawMain() . $inner, $this->makeAttributes());
+        return Html::nest('.buttons', $this->drawMain() . $this->drawContent(), $this->makeAttributes());
     }
 
 }

@@ -4,7 +4,7 @@ namespace PinaSimpleControls\Controls;
 
 use Pina\App;
 
-class FormSelect extends \Pina\Controls\FormSelect
+class FormSelect extends \Pina\Controls\Form\FormSelect
 {
 
     protected function makeInputOptions()

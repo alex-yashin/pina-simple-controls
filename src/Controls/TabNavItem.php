@@ -7,13 +7,13 @@ use Pina\Html;
 
 class TabNavItem extends LinkNavItem
 {
-    protected function draw()
+    protected function draw(): string
     {
         if (!$this->isPermitted()) {
             return '';
         }
 
-        $inner = $this->drawInnerBefore() . $this->drawInner() . $this->drawInnerAfter();
+        $inner = $this->drawContent();
 
         $options = array_merge($this->makeLinkAttributes(), $this->makeAttributes(['class' => 'tab']));
 

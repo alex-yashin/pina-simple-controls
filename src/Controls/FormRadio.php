@@ -3,18 +3,18 @@
 
 namespace PinaSimpleControls\Controls;
 
-use Pina\Controls\FormSelect;
+use Pina\Controls\Form\FormSelect;
 use Pina\Html;
 
 class FormRadio extends FormSelect
 {
 
-    protected function draw()
+    protected function draw(): string
     {
-        return $this->drawInnerBefore() . $this->drawInner() . $this->drawInnerAfter();
+        return $this->drawContent();
     }
 
-    protected function drawInner()
+    protected function drawContent(): string
     {
         $title = Html::nest('h4', $this->title);
         $r = $this->drawControl();
