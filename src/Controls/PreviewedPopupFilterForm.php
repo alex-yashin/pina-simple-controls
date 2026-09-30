@@ -5,7 +5,7 @@ namespace PinaSimpleControls\Controls;
 
 
 use Pina\App;
-use Pina\Controls\Form\FilterForm;
+use Pina\Controls\Record\FilterForm;
 use Pina\Controls\Record\BodyLessRecordFormCompiler;
 use Pina\Controls\Record\RecordFormCompiler;
 use Pina\Html;
