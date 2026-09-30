@@ -5,7 +5,7 @@ namespace PinaSimpleControls;
 use Pina\App;
 use Pina\Controls\Components\ButtonRow;
 use Pina\Controls\Components\PagingControl;
-use Pina\Controls\Form\FilterForm;
+use Pina\Controls\Record\FilterForm;
 use Pina\Controls\Form\FormFlagStatic;
 use Pina\Controls\Form\FormInput;
 use Pina\Controls\Form\FormRow;
