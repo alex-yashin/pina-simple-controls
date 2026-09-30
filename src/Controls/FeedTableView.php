@@ -5,6 +5,7 @@ namespace PinaSimpleControls\Controls;
 
 
 use Pina\App;
+use Pina\Controls\ControlContainer;
 use Pina\Controls\Record\TableView;
 use Pina\Controls\Wrapper;
 use Pina\Data\DataRecord;
@@ -15,7 +16,7 @@ class FeedTableView extends TableView
 
     protected function drawContent(): string
     {
-        $container = new Wrapper('ul.nav feed ');
+        $container = $this->makeContainer();
 
         App::assets()->addScript('/vendor/simple-css-styles/src/context/context.js');
         foreach ($this->dataTable as $record) {
@@ -23,6 +24,11 @@ class FeedTableView extends TableView
             $container->append($this->makeFeedRecordRow($record, $id));
         }
         return strval($container);
+    }
+
+    protected function makeContainer(): ControlContainer
+    {
+        return new Wrapper('ul.nav feed ');
     }
 
     protected function makeFeedRecordRow(DataRecord $record, $id): FeedRecordRow
